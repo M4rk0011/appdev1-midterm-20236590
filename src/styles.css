@@ -1,1 +1,283 @@
-/* You can add global styles to this file, and also import other style files */
+/* Cyborg / cyber UI — Bootstrap 5 dark theme + neon accents */
+:root,
+[data-bs-theme='dark'] {
+  --cyber-bg: #05080d;
+  --cyber-bg-2: #0a1018;
+  --cyber-surface: #0c121c;
+  --cyber-surface-2: #111a28;
+  --cyber-cyan: #00f0ff;
+  --cyber-cyan-dim: rgba(0, 240, 255, 0.45);
+  --cyber-magenta: #ff2d95;
+  --cyber-magenta-dim: rgba(255, 45, 149, 0.4);
+  --cyber-text: #c9e4f0;
+  --cyber-text-muted: #6b8a9e;
+  --cyber-glow: 0 0 20px rgba(0, 240, 255, 0.25);
+  --cyber-glow-strong: 0 0 28px rgba(0, 240, 255, 0.45);
+
+  --bs-primary: #00f0ff;
+  --bs-primary-rgb: 0, 240, 255;
+  --bs-body-bg: var(--cyber-bg);
+  --bs-body-color: var(--cyber-text);
+  --bs-secondary-color: var(--cyber-text-muted);
+  --bs-border-color: rgba(0, 240, 255, 0.22);
+  --bs-border-radius: 0.35rem;
+  --bs-border-radius-lg: 0.5rem;
+  --tf-surface: var(--cyber-surface);
+  --tf-shadow: 0 0 0 1px rgba(0, 240, 255, 0.12), 0 8px 32px rgba(0, 0, 0, 0.45);
+  --tf-shadow-lg: 0 0 0 1px rgba(0, 240, 255, 0.18), 0 0 40px rgba(0, 240, 255, 0.08),
+    0 16px 48px rgba(0, 0, 0, 0.55);
+  --tf-ring: rgba(0, 240, 255, 0.45);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body.cyborg-body {
+  margin: 0;
+  font-family:
+    'Rajdhani',
+    system-ui,
+    -apple-system,
+    'Segoe UI',
+    sans-serif;
+  font-size: 1.02rem;
+  font-weight: 500;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  background-color: var(--cyber-bg);
+  color: var(--cyber-text);
+}
+
+h1,
+h2,
+h3,
+h4,
+.h1,
+.h2,
+.h3,
+.h4 {
+  font-family: 'Orbitron', 'Rajdhani', sans-serif;
+  letter-spacing: 0.04em;
+  font-weight: 600;
+  color: #e8f4fc;
+}
+
+a {
+  color: var(--cyber-cyan);
+  text-decoration: none;
+  text-underline-offset: 0.2em;
+  transition:
+    color 0.15s ease,
+    text-shadow 0.15s ease,
+    filter 0.15s ease;
+}
+
+a:hover {
+  color: #7ff8ff;
+  text-shadow: 0 0 12px var(--cyber-cyan-dim);
+}
+
+.btn {
+  font-family: 'Orbitron', sans-serif;
+  font-weight: 600;
+  font-size: 0.72rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  border-radius: var(--bs-border-radius);
+  border-width: 1px;
+  transition:
+    transform 0.12s ease,
+    box-shadow 0.15s ease,
+    background-color 0.15s ease,
+    border-color 0.15s ease,
+    color 0.15s ease;
+}
+
+.btn:focus-visible {
+  box-shadow: 0 0 0 0.2rem var(--tf-ring);
+}
+
+.btn-primary {
+  color: #020810 !important;
+  background: linear-gradient(135deg, #00f0ff 0%, #00c8dd 50%, #0099aa 100%);
+  border-color: rgba(0, 240, 255, 0.6) !important;
+  box-shadow: var(--cyber-glow);
+}
+
+.btn-primary:hover {
+  color: #020810 !important;
+  background: linear-gradient(135deg, #5ff8ff 0%, #00f0ff 55%, #00b8cc 100%);
+  border-color: #7ff8ff !important;
+  box-shadow: var(--cyber-glow-strong);
+  transform: translateY(-1px);
+}
+
+.btn-outline-primary {
+  color: var(--cyber-cyan) !important;
+  border-color: var(--cyber-cyan-dim) !important;
+  background: rgba(0, 240, 255, 0.04);
+}
+
+.btn-outline-primary:hover {
+  color: #020810 !important;
+  background: var(--cyber-cyan);
+  border-color: var(--cyber-cyan) !important;
+  box-shadow: var(--cyber-glow);
+}
+
+.btn-outline-secondary {
+  color: var(--cyber-text-muted) !important;
+  border-color: rgba(107, 138, 158, 0.45) !important;
+  background: transparent;
+}
+
+.btn-outline-secondary:hover {
+  color: var(--cyber-text) !important;
+  border-color: rgba(0, 240, 255, 0.4) !important;
+  background: rgba(0, 240, 255, 0.08);
+}
+
+.btn-outline-warning {
+  color: #ffd447 !important;
+  border-color: rgba(255, 212, 71, 0.45) !important;
+  background: rgba(255, 212, 71, 0.05);
+}
+
+.btn-outline-warning:hover {
+  color: #1a1400 !important;
+  background: #ffd447;
+  border-color: #ffd447 !important;
+}
+
+.btn-outline-danger {
+  color: #ff6b9d !important;
+  border-color: rgba(255, 107, 157, 0.45) !important;
+  background: rgba(255, 45, 149, 0.06);
+}
+
+.btn-outline-danger:hover {
+  color: #1a050c !important;
+  background: linear-gradient(135deg, #ff6b9d, #ff2d95);
+  border-color: #ff2d95 !important;
+}
+
+.btn-sm {
+  border-radius: calc(var(--bs-border-radius) - 0.05rem);
+  font-size: 0.65rem;
+}
+
+.form-control,
+.form-select {
+  color: var(--cyber-text);
+  background-color: var(--cyber-bg-2);
+  border: 1px solid rgba(0, 240, 255, 0.25);
+  transition:
+    border-color 0.15s ease,
+    box-shadow 0.15s ease;
+}
+
+.form-control::placeholder {
+  color: var(--cyber-text-muted);
+  opacity: 0.85;
+}
+
+.form-control:focus,
+.form-select:focus {
+  color: var(--cyber-text);
+  background-color: var(--cyber-surface-2);
+  border-color: var(--cyber-cyan);
+  box-shadow: 0 0 0 0.2rem rgba(0, 240, 255, 0.15);
+}
+
+.form-label {
+  font-family: 'Orbitron', sans-serif;
+  font-weight: 600;
+  font-size: 0.68rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--cyber-cyan-dim);
+}
+
+.card {
+  background-color: var(--cyber-surface);
+  border: 1px solid rgba(0, 240, 255, 0.2);
+  box-shadow: var(--tf-shadow);
+  border-radius: var(--bs-border-radius-lg);
+  overflow: hidden;
+}
+
+.table {
+  --bs-table-bg: transparent;
+  --bs-table-color: var(--cyber-text);
+  margin-bottom: 0;
+}
+
+.badge {
+  font-family: 'Orbitron', sans-serif;
+  font-weight: 600;
+  font-size: 0.62rem;
+  letter-spacing: 0.06em;
+  padding: 0.45em 0.75em;
+}
+
+.nav-tabs .nav-link {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--cyber-text-muted);
+  border: none;
+  border-bottom: 2px solid transparent;
+  padding: 0.65rem 1rem;
+  margin-bottom: -1px;
+  transition:
+    color 0.15s ease,
+    border-color 0.15s ease,
+    text-shadow 0.15s ease;
+}
+
+.nav-tabs .nav-link:hover {
+  color: var(--cyber-cyan);
+  border-bottom-color: rgba(0, 240, 255, 0.35);
+}
+
+.nav-tabs .nav-link.active {
+  color: var(--cyber-cyan) !important;
+  background: transparent;
+  border-bottom-color: var(--cyber-cyan);
+  text-shadow: 0 0 14px var(--cyber-cyan-dim);
+}
+
+.alert {
+  border: 1px solid rgba(0, 240, 255, 0.25);
+  border-radius: var(--bs-border-radius-lg);
+  box-shadow: var(--tf-shadow);
+  background: linear-gradient(135deg, rgba(0, 240, 255, 0.08), rgba(255, 45, 149, 0.05));
+  color: var(--cyber-text);
+}
+
+.alert-warning {
+  border-color: rgba(255, 212, 71, 0.35);
+  color: #ffe8a8;
+}
+
+.page-kicker {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  color: var(--cyber-magenta);
+  text-shadow: 0 0 12px var(--cyber-magenta-dim);
+}
+
+.text-secondary {
+  color: var(--cyber-text-muted) !important;
+}
