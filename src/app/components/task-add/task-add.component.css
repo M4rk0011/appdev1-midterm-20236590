@@ -1,0 +1,32 @@
+:host {
+  display: block;
+}
+
+.tf-form-card {
+  background: linear-gradient(160deg, rgba(12, 18, 28, 0.96) 0%, rgba(6, 10, 18, 0.98) 100%) !important;
+  border: 1px solid rgba(0, 240, 255, 0.28) !important;
+  border-radius: var(--bs-border-radius-lg);
+  box-shadow: var(--tf-shadow);
+}
+
+.tf-form-card::before {
+  content: '';
+  display: block;
+  height: 3px;
+  background: linear-gradient(90deg, var(--cyber-magenta), var(--cyber-cyan));
+  opacity: 0.8;
+}
+
+.tf-form-card .card-body {
+  padding-top: 1.75rem !important;
+}
+
+.tf-form-card .form-control-lg {
+  font-size: 1rem;
+  font-family: 'Rajdhani', sans-serif;
+  font-weight: 600;
+}
+
+.tf-form-card h1 {
+  font-family: 'Orbitron', sans-serif;
+}

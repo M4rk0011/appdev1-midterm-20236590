@@ -1,0 +1,65 @@
+<div class="container py-4 py-lg-5 px-3 px-lg-4">
+  <div class="row justify-content-center">
+    <div class="col-12 col-lg-7 col-xl-6">
+      <header class="mb-4">
+        <p class="page-kicker text-uppercase mb-1">Create</p>
+        <h1 class="h3 mb-1">Add task</h1>
+        <p class="text-secondary small mb-0">Fill in the details below. Title and due date are required.</p>
+      </header>
+
+      <div class="card border-0 tf-form-card shadow-sm">
+        <div class="card-body p-4 p-md-5">
+          <form (ngSubmit)="submit()" class="row g-3">
+            <div class="col-12">
+              <label for="title" class="form-label">Title</label>
+              <input
+                id="title"
+                name="title"
+                type="text"
+                class="form-control form-control-lg"
+                [(ngModel)]="title"
+                required
+                placeholder="e.g. Ship quarterly report"
+              />
+            </div>
+            <div class="col-12">
+              <label for="description" class="form-label">Description</label>
+              <textarea
+                id="description"
+                name="description"
+                class="form-control"
+                rows="4"
+                [(ngModel)]="description"
+                placeholder="Context, links, or acceptance criteria…"
+              ></textarea>
+            </div>
+            <div class="col-md-6">
+              <label for="dueDate" class="form-label">Due date</label>
+              <input id="dueDate" name="dueDate" type="date" class="form-control" [(ngModel)]="dueDate" />
+            </div>
+            <div class="col-md-3">
+              <label for="status" class="form-label">Status</label>
+              <select id="status" name="status" class="form-select" [(ngModel)]="status">
+                @for (s of statuses; track s) {
+                  <option [ngValue]="s">{{ s }}</option>
+                }
+              </select>
+            </div>
+            <div class="col-md-3">
+              <label for="priority" class="form-label">Priority</label>
+              <select id="priority" name="priority" class="form-select" [(ngModel)]="priority">
+                @for (p of priorities; track p) {
+                  <option [ngValue]="p">{{ p }}</option>
+                }
+              </select>
+            </div>
+            <div class="col-12 pt-2 d-flex flex-wrap gap-2">
+              <button type="submit" class="btn btn-primary px-4">Create task</button>
+              <a routerLink="/tasks" class="btn btn-outline-secondary">Cancel</a>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

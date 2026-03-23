@@ -1,0 +1,72 @@
+<div class="container py-4 py-lg-5 px-3 px-lg-4">
+  <header class="page-header d-flex flex-column flex-md-row align-items-md-end justify-content-md-between gap-3 mb-4">
+    <div>
+      <p class="page-kicker text-uppercase mb-1">Overview</p>
+      <h1 class="page-title h3 mb-1">Tasks</h1>
+      <p class="text-secondary mb-0 small">Prioritize work, track status, and open details in one place.</p>
+    </div>
+    <div class="d-flex gap-2">
+      <a routerLink="/tasks/new" class="btn btn-primary px-4 shadow-sm">
+        <span class="me-1" aria-hidden="true">+</span>
+        New task
+      </a>
+    </div>
+  </header>
+
+  <div class="tf-panel">
+    <div class="table-responsive">
+      <table class="table table-hover align-middle mb-0 tf-table">
+        <thead>
+          <tr>
+            <th scope="col">Title</th>
+            <th scope="col" class="d-none d-md-table-cell">Due</th>
+            <th scope="col">Priority</th>
+            <th scope="col">Status</th>
+            <th scope="col" class="text-end">Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          @for (task of taskService.tasks(); track task.id) {
+            <tr>
+              <td>
+                <a class="fw-medium tf-table__title" [routerLink]="['/tasks', task.id, 'info']">{{ task.title }}</a>
+              </td>
+              <td class="d-none d-md-table-cell text-secondary small">{{ task.dueDate }}</td>
+              <td>
+                <span class="badge rounded-pill" [ngClass]="priorityClass(task.priority)">{{ task.priority }}</span>
+              </td>
+              <td>
+                <span class="badge rounded-pill" [ngClass]="statusClass(task.status)">{{ task.status }}</span>
+              </td>
+              <td class="text-end text-nowrap tf-table__actions">
+                <button
+                  type="button"
+                  class="btn btn-sm btn-outline-secondary"
+                  (click)="toggleStatus(task.id)"
+                  title="Advance status"
+                >
+                  Status
+                </button>
+                <a class="btn btn-sm btn-outline-primary" [routerLink]="['/tasks', task.id, 'info']">View</a>
+                <a class="btn btn-sm btn-outline-warning" [routerLink]="['/tasks', task.id, 'edit']">Edit</a>
+                <button
+                  type="button"
+                  class="btn btn-sm btn-outline-danger"
+                  (click)="deleteTask(task.id, task.title)"
+                >
+                  Delete
+                </button>
+              </td>
+            </tr>
+          } @empty {
+            <tr>
+              <td colspan="5" class="text-center text-secondary py-5">
+                No tasks yet. Create your first task to get started.
+              </td>
+            </tr>
+          }
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,46 @@
+:host {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.app-main {
+  flex: 1 0 auto;
+  width: 100%;
+  padding-bottom: 2.5rem;
+  position: relative;
+  background-color: var(--cyber-bg);
+  background-image:
+    linear-gradient(rgba(0, 240, 255, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 240, 255, 0.04) 1px, transparent 1px),
+    radial-gradient(ellipse 90% 60% at 50% -15%, rgba(0, 240, 255, 0.14), transparent 55%),
+    radial-gradient(ellipse 70% 50% at 100% 100%, rgba(255, 45, 149, 0.1), transparent 50%),
+    radial-gradient(ellipse 50% 40% at 0% 80%, rgba(0, 200, 255, 0.06), transparent 45%);
+  background-size:
+    28px 28px,
+    28px 28px,
+    100% 100%,
+    100% 100%,
+    100% 100%;
+  background-attachment: fixed;
+}
+
+.app-main::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background: linear-gradient(
+    180deg,
+    rgba(5, 8, 13, 0.1) 0%,
+    transparent 30%,
+    transparent 70%,
+    rgba(255, 45, 149, 0.04) 100%
+  );
+  z-index: 0;
+}
+
+.app-main > * {
+  position: relative;
+  z-index: 1;
+}

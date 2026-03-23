@@ -1,0 +1,22 @@
+@if (task(); as t) {
+  <div class="task-info">
+    <dl class="row mb-0 gy-3">
+      <dt class="col-sm-3 text-secondary small text-uppercase">Description</dt>
+      <dd class="col-sm-9">{{ t.description }}</dd>
+      <dt class="col-sm-3 text-secondary small text-uppercase">Due date</dt>
+      <dd class="col-sm-9 font-monospace small">{{ t.dueDate }}</dd>
+      <dt class="col-sm-3 text-secondary small text-uppercase">Priority</dt>
+      <dd class="col-sm-9">
+        <span class="badge rounded-pill" [ngClass]="priorityClass()">{{ t.priority }}</span>
+      </dd>
+      <dt class="col-sm-3 text-secondary small text-uppercase">Status</dt>
+      <dd class="col-sm-9">
+        <span class="badge rounded-pill" [ngClass]="statusClass()">{{ t.status }}</span>
+      </dd>
+      <dt class="col-sm-3 text-secondary small text-uppercase">Created</dt>
+      <dd class="col-sm-9 font-monospace small">{{ t.createdAt }}</dd>
+    </dl>
+  </div>
+} @else {
+  <p class="text-secondary mb-0">Task not found.</p>
+}
