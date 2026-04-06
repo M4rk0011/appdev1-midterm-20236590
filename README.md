@@ -1,7 +1,9 @@
 # appdev1-midterm-20236590 — TaskFlow (Yadao Midterm App Exam)
 
 **Course / project:** Applications Development 1 — Midterm lab (TaskFlow: personal task manager).
-
+**default user and password
+username: admin
+password: admin**
 **Description:** Angular app with full task CRUD, in-memory `TaskService`, parameterized routes, and child routes for task detail (`/tasks/:id/info`, `/tasks/:id/edit`). UI uses **Bootstrap 5** for layout and components; custom CSS only themes Bootstrap (cyborg style).
 
 **Stack:** Angular 19 (see `package.json`), TypeScript, RxJS, **Bootstrap 5.3** (CDN in `src/index.html`), **standalone** components (`standalone: true` on each component).
