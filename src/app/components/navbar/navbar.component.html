@@ -32,6 +32,25 @@
         <li class="nav-item">
           <a class="nav-link rounded px-3" routerLink="/tasks/new" routerLinkActive="active">Add task</a>
         </li>
+        <li class="nav-item dropdown" *ngIf="isLoggedIn">
+          <a
+            class="nav-link dropdown-toggle rounded px-3"
+            href="#"
+            role="button"
+            data-bs-toggle="dropdown"
+            aria-expanded="false"
+          >
+            {{ currentUser }}
+          </a>
+          <ul class="dropdown-menu dropdown-menu-end">
+            <li>
+              <button class="dropdown-item" (click)="logout()">Logout</button>
+            </li>
+          </ul>
+        </li>
+        <li class="nav-item" *ngIf="!isLoggedIn">
+          <a class="nav-link rounded px-3" routerLink="/login" routerLinkActive="active">Login</a>
+        </li>
       </ul>
     </div>
   </div>
